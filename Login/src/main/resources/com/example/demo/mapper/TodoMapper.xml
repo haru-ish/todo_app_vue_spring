@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.TodoMapper">
+	<select id="getUserId" resultType="java.lang.Integer">
+		SELECT 
+		user_id
+		FROM
+		login_user
+		WHERE
+		user_name = #{userName}
+	</select>
+	
+	<insert id="create" parameterType="com.example.demo.form.TodoForm">
+		INSERT
+		INTO todo_task(
+		comment,
+		user_id,
+		state,
+		delete_flg
+		)
+		VALUES(
+		#{comment},
+		#{userId},
+		0,
+		0
+		)
+	</insert>
+	
+	<select id="getTodoAll" resultType="com.example.demo.entity.TodoEntity">
+		SELECT 
+		*
+		FROM
+		todo_task
+		WHERE
+		user_id = #{userId}
+		AND
+		delete_flg = 0
+	</select>
+	
+	<update id="delete" parameterType="java.lang.Integer">
+		UPDATE
+		todo_task
+		SET
+		delete_flg = 1
+		WHERE
+		id = #{id}
+		AND
+		user_id = #{userId}
+	</update>
+	
+	
+
+
+</mapper>

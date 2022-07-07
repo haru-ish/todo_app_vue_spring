@@ -1,0 +1,95 @@
+
+* {
+    box-sizing: border-box;
+  }
+  #app {
+    max-width: 640px;
+    margin: 0 auto;
+    
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  thead th {
+    border-bottom: 2px solid #0099e4; /*#d31c4a */
+    color: #0099e4;
+  }
+  th,
+  th {
+    padding: 0 8px;
+    line-height: 40px;
+  }
+  thead th.id {
+    width: 50px;
+  }
+  thead th.state {
+    width: 100px;
+  }
+  thead th.button {
+    width: 60px;
+  }
+  tbody td.button, tbody td.state {
+    text-align: center;
+  }
+  tbody tr td,
+  tbody tr th {
+    border-bottom: 1px solid #ccc;
+    transition: all 0.4s;
+  }
+  tbody tr.done td,
+  tbody tr.done th {
+    text-decoration: line-through;
+  }
+  button {
+    border: none;
+    border-radius: 20px;
+    line-height: 24px;
+    padding: 0 8px;
+    background: #0099e4;
+    color: #fff;
+    cursor: pointer;
+  }
+  button:disabled {
+    border: none;
+    border-radius: 20px;
+    line-height: 24px;
+    padding: 0 8px;
+    background: #b0dff7;
+    color: #fff;
+    cursor: pointer;
+  }
+ 
+ 
+  .tabs {
+    overflow: hidden;
+  }
+  .tabs label {
+    float: left;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background: #0099e4;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .tabs label:hover {
+    background-color: #a4e3fc;
+    border-color: rgb(178, 221, 241);
+    color: #fff;
+    cursor: auto;
+  }
+  .tabs input:checked + label {
+    background: #fff;
+    color: rgb(15, 15, 15);
+    border-color: #ccc;
+    cursor: auto;
+  }
+  .tabs input:checked + label:hover {
+    background-color: #a4e3fc;
+    border-color: rgb(178, 221, 241);
+    color: #fff;
+    cursor: auto;
+  }
+  .tabs input{
+    display: none;
+  }
